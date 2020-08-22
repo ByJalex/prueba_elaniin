@@ -1,32 +1,63 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <NavBar>
+      <template #left>Foodies</template>
+      <template #center>
+        <router-link to="/acerca">Acerca de</router-link>
+        <router-link to="/restaurantes">Restaurantes</router-link>
+        <router-link to="/menu">Menú</router-link>
+        <router-link to="/contactanos">Contáctanos</router-link>
+      </template>
+    </NavBar>
+    <router-view />
   </div>
 </template>
 
+<script>
+import NavBar from "@/components/Navbar.vue";
+export default {
+  components: {
+    NavBar,
+  },
+};
+</script>
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+@font-face {
+  font-family: "Druk Text Wide";
+  src: url("./assets/Webfonts/DrukTextWide-Bold.ttf");
+}
+@font-face {
+  font-family: "Syne";
+  src: url("./assets/Webfonts/Syne-Bold.woff");
+}
+* {
+  margin: 0;
+  padding: 0;
   color: #2c3e50;
+ 
 }
 
-#nav {
-  padding: 30px;
+.secondary-color{
+  color: rgba(0, 0, 0, 0.4);
 }
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
 }
 
-#nav a.router-link-exact-active {
-  color: #42b983;
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #C6C6C6;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #AAAAAA;
 }
 </style>

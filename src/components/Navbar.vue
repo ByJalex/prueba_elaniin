@@ -1,0 +1,112 @@
+<template>
+  <div class="nav">
+    <div class="left-content-nav">
+      <router-link to="/">
+        <slot name="left"></slot>
+      </router-link>
+    </div>
+    <div class="center-content-nav">
+      <slot name="center"></slot>
+    </div>
+    <div class="menu">
+      <i class="bx bx-menu bx-sm"></i>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  name: "NavBar",
+};
+</script>
+
+<style scoped>
+a {
+  text-decoration: none;
+}
+
+.menu {
+  position: absolute;
+  right: 0;
+  cursor: pointer;
+}
+
+.nav {
+  position: absolute;
+  width: 100%;
+  z-index: 100;
+  display: flex;
+}
+
+.left-content-nav {
+  margin-left: 101px;
+  margin-top: 57px;
+  font-family: 'Druk Text Wide';
+  font-style: normal;
+  font-weight: bold;
+  font-size: 27px;
+  line-height: 27px;
+  color: #000000;
+}
+.center-content-nav {
+  margin-top: 60px;
+  margin-left: 86px;
+  top: 3px;
+}
+
+.center-content-nav a {
+  color: #000000;
+  margin-right: 39px;
+  /*Estilos hover*/
+  background: linear-gradient(to bottom, #ffd600 0%, #ffd600 100%);
+  background-position: 0 100%;
+  background-repeat: repeat-x;
+  background-size: 4px 0px;
+  color: #000;
+  transition: background-size 0.4s;
+  font-family: Syne;
+  font-style: normal;
+  font-weight: bold;
+}
+.center-content-nav a:hover {
+  background-size: 4px 50px;
+}
+
+.center-content-nav .router-link-active {
+  background-size: 4px 6px;
+}
+/*Dispositivo de escritorio*/
+@media screen and (min-width: 768px) {
+  .menu {
+    display: none;
+  }
+}
+/*Dispositivo mediano*/
+@media screen and (min-width: 640px) and (max-width: 768px) {
+  .center-content-nav {
+    display: none;
+  }
+  .left-content-nav {
+    margin-left: 40px;
+    margin-top: 30px;
+  }
+  .menu {
+    margin-top: 30px;
+    margin-right: 40px;
+  }
+}
+/*Dispositivo de telefono*/
+@media screen and (max-width: 640px) {
+  .center-content-nav {
+    display: none;
+  }
+  .left-content-nav {
+    margin-left: 16px;
+    margin-top: 47px;
+  }
+  .menu {
+    margin-top: 47px;
+    margin-right: 16px;
+  }
+}
+</style>
