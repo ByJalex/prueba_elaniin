@@ -1,11 +1,11 @@
 <template>
   <div class="nav">
     <div class="left-content-nav">
-      <router-link to="/">
+      <router-link :class="this.$store.state.classToActiveMenu" to="/">
         <slot name="left"></slot>
       </router-link>
     </div>
-    <div class="center-content-nav">
+    <div :class="'center-content-nav ' + this.$store.state.classToActiveMenu ">
       <slot name="center"></slot>
     </div>
     <div class="menu">
@@ -41,7 +41,7 @@ a {
 .left-content-nav {
   margin-left: 101px;
   margin-top: 57px;
-  font-family: 'Druk Text Wide';
+  font-family: "Druk Text Wide";
   font-style: normal;
   font-weight: bold;
   font-size: 27px;
@@ -55,14 +55,12 @@ a {
 }
 
 .center-content-nav a {
-  color: #000000;
   margin-right: 39px;
   /*Estilos hover*/
   background: linear-gradient(to bottom, #ffd600 0%, #ffd600 100%);
   background-position: 0 100%;
   background-repeat: repeat-x;
   background-size: 4px 0px;
-  color: #000;
   transition: background-size 0.4s;
   font-family: Syne;
   font-style: normal;

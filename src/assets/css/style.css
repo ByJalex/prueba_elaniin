@@ -1,3 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+    overflow-x: unset;
+}
+
+.secondary-color {
+    color: rgba(0, 0, 0, 0.4);
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+ ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+ ::-webkit-scrollbar-thumb {
+    background: #C6C6C6;
+}
+
+ ::-webkit-scrollbar-thumb:hover {
+    background: #AAAAAA;
+}
+
+.testimonials {
+    height: 100vh;
+    background-size: cover;
+    background-position: 0 70%;
+    background-image: url("https://firebasestorage.googleapis.com/v0/b/josueayala27-49da6.appspot.com/o/testimonials.png?alt=media&token=e73639bd-06fc-445d-ad34-a7c7314f6677");
+}
+
+.testimonials-containter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+}
+
+.img-testimonials {
+    max-width: 90rem;
+    right: 0;
+    position: absolute;
+}
+
+.title-testimonial {
+    font-family: Druk Text Wide;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 125.8%;
+    text-align: center;
+    color: #000000;
+}
+
+.content-carrousel {
+    position: absolute;
+    width: 744px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.testimonial-description {
+    margin-left: auto;
+    margin-right: auto;
+    width: 549px;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 128.91%;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.4);
+    margin-top: 19px;
+}
+
+.content-test-description {
+    width: 100%;
+}
+
+.controls-carrousel {
+    margin-top: 65px;
+    display: flex;
+    align-items: center;
+}
+
+.controls-carrousel span {
+    cursor: pointer;
+}
+
+.color-active {
+    color: #ffd600;
+}
+
+.color-inactive {
+    color: #000000;
+}
+
+.numbers-item-carrousel {
+    font-family: Syne;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 21px;
+    color: #666666;
+}
+
 .selected-component-place {
     background: #fff1bf;
     border-radius: 4px;
@@ -239,12 +349,12 @@
 }
 
 .bolder-text {
-    color: #000;
     font-family: Druk Text Wide;
     font-style: normal;
     font-weight: bold;
     font-size: 60px;
     line-height: 60px;
+    width: auto;
 }
 
 .text-market {
@@ -267,6 +377,8 @@
     display: flex;
     align-items: center;
     background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: local;
     background-image: url("https://firebasestorage.googleapis.com/v0/b/josueayala27-49da6.appspot.com/o/bg-home-landing.png?alt=media&token=3c89b20f-4940-44d4-82d5-cea42803be78");
 }
 
@@ -292,6 +404,23 @@
 /*Dispositivo mediano*/
 
 @media screen and (min-width: 640px) and (max-width: 768px) {
+    .img-testimonials {
+        display: none;
+    }
+    .title-testimonial {
+        font-size: 30px;
+        line-height: 125.8%;
+    }
+    .testimonial-description {
+        margin-top: 10px;
+        font-size: 18px;
+        line-height: 128.91%;
+    }
+    .controls-carrousel {
+        margin-top: 92px;
+        font-size: 20px;
+        line-height: 21px;
+    }
     .bolder-text {
         font-size: 40px;
         line-height: 40px;
@@ -353,6 +482,26 @@
 /*Dispositivo de telefono*/
 
 @media screen and (max-width: 640px) {
+    .testimonials {
+        height: auto !important;
+    }
+    .content-carrousel {
+        width: auto;
+    }
+    .img-testimonials {
+        display: none;
+    }
+    .testimonials {
+        background-image: none;
+    }
+    .testimonial-description {
+        width: 343px;
+    }
+    .title-testimonial {
+        font-size: 20px;
+        line-height: 125.8%;
+        width: 343px;
+    }
     .bolder-text {
         font-size: 35px;
         line-height: 35px;
