@@ -1,0 +1,444 @@
+.selected-component-place {
+    background: #fff1bf;
+    border-radius: 4px;
+    border: 0px solid #fff1bf !important;
+}
+
+.container-app {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 90rem;
+}
+
+.container-text-not-found {
+    margin-top: 23px;
+    text-align: center;
+}
+
+.text-notfound {
+    color: #000000;
+}
+
+.not-found {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    font-family: Syne;
+    align-items: center;
+    flex-direction: column;
+}
+
+.loader {
+    text-align: center;
+    margin-top: 40px;
+}
+
+#map {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    width: 50%;
+}
+
+.search-locations {
+    width: 50%;
+}
+
+.title-place-item {
+    font-family: Syne;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.place-item {
+    border: 1px solid #000000;
+    border-radius: 4px;
+    margin-right: 22px;
+    margin-bottom: 10px;
+    padding-top: 15px;
+    padding-left: 22px;
+    padding-bottom: 14px;
+    cursor: pointer;
+}
+
+.show-places-content {
+    padding-left: 102px;
+    width: 100%;
+    margin-top: 15px;
+}
+
+.active {
+    background-color: #000000;
+    color: white !important;
+}
+
+.input-search {
+    padding-top: 12px;
+    position: relative;
+    border: 1px solid #c4c4c4;
+    padding-bottom: 13px;
+}
+
+.input-search .search-icon {
+    position: absolute;
+    left: 105px;
+    color: #000000;
+}
+
+.input-search .load-icon {
+    position: absolute;
+    right: 20px;
+    color: #000000;
+}
+
+.i-search {
+    outline: none;
+    width: 100%;
+    padding-left: 150px;
+}
+
+.delivery-type {
+    width: 50%;
+    text-align: center;
+    font-family: Syne;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 25px;
+    line-height: 30px;
+    padding-top: 17px;
+    padding-bottom: 17px;
+    cursor: pointer;
+    color: #000000;
+}
+
+.choose-type {
+    border: 1px solid #c4c4c4;
+    margin-top: 32px;
+    width: 100%;
+    display: flex;
+}
+
+.maps-foodie {
+    margin-top: 80px;
+    height: 100vh;
+    display: flex;
+}
+
+.maps-title {
+    text-align: center;
+    font-family: Druk Text Wide;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 40px;
+    color: #000000;
+}
+
+.degradado {
+    position: absolute;
+    background-color: red;
+}
+
+.text--folding {}
+
+.color-primary {
+    color: #ffd600;
+}
+
+.img-text-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.up-text {
+    position: absolute;
+    font-weight: bold;
+    right: 40px;
+    bottom: 61px;
+    margin-bottom: 61px;
+    font-family: Druk Text Wide;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 50px;
+    text-align: right;
+}
+
+.txt-desc-arrow {
+    margin-top: 54px;
+}
+
+.txt-arrow-header {
+    margin-top: 46px;
+}
+
+.txt-desc-foo {
+    margin-top: 27px;
+}
+
+.text-about-foodie {
+    margin: 56px;
+}
+
+.title-foodie {
+    font-family: Syne;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 26px;
+    /* identical to box height */
+    color: #000000;
+}
+
+.img-about {
+    height: 100vh;
+}
+
+.about-foodie {
+    display: flex;
+    align-items: center;
+    background-size: cover;
+    background-image: url("https://firebasestorage.googleapis.com/v0/b/josueayala27-49da6.appspot.com/o/line-about.png?alt=media&token=8aedfe3d-5946-4d0e-bb93-e5dd350cd3dd");
+}
+
+.about-foodie div {
+    width: 100%;
+}
+
+.text-arrow {
+    display: flex;
+    align-items: center;
+    font-family: Syne;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 26px;
+    color: #000000;
+}
+
+.text-arrow i {
+    color: #000000;
+}
+
+.txt-desc {
+    margin-top: 21px;
+    font-size: 18px;
+    line-height: 25px;
+}
+
+.secondary-color {
+    color: rgba(0, 0, 0, 0.4);
+}
+
+.text-header {
+    display: flex;
+    flex-direction: column;
+}
+
+.bolder-text {
+    color: #000;
+    font-family: Druk Text Wide;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 60px;
+    line-height: 60px;
+}
+
+.text-market {
+    color: #000000;
+    margin-right: 39px;
+    /*Estilos hover*/
+    background: linear-gradient(to bottom, #ffd600 0%, #ffd600 100%);
+    background-position: 0 100%;
+    background-repeat: repeat-x;
+    background-size: 4px 57px;
+}
+
+.img-container {
+    width: 367px;
+    height: 346.26px;
+}
+
+.container-landing {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    background-size: cover;
+    background-image: url("https://firebasestorage.googleapis.com/v0/b/josueayala27-49da6.appspot.com/o/bg-home-landing.png?alt=media&token=3c89b20f-4940-44d4-82d5-cea42803be78");
+}
+
+.content-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 102px;
+    margin-right: 102px;
+}
+
+.content-header div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+@media screen and (min-width: 768px) {
+    .img-media {}
+}
+
+
+/*Dispositivo mediano*/
+
+@media screen and (min-width: 640px) and (max-width: 768px) {
+    .bolder-text {
+        font-size: 40px;
+        line-height: 40px;
+    }
+    .img-media {
+        width: 312.93px;
+        height: 246px;
+    }
+    .about-foodie {
+        display: flex;
+        flex-direction: column;
+    }
+    .img-about {
+        height: auto;
+    }
+    .text-about-foodie {
+        padding-left: 53px;
+        padding-right: 53px;
+    }
+    .up-text {
+        right: 53px;
+        bottom: 30px;
+        margin-bottom: 30px;
+    }
+    .text-about-foodie {
+        margin-top: 60px;
+    }
+    .about-foodie {
+        background-position: 1px 1000px;
+        background-size: cover;
+    }
+    .maps-foodie {
+        display: flex;
+        flex-direction: column;
+    }
+    .search-locations {
+        width: 100%;
+    }
+    .show-places-content {
+        padding-left: 53px;
+        padding-right: 63px;
+    }
+    #map {
+        width: 100%;
+    }
+    .maps-title {
+        font-size: 35px;
+        line-height: 35px;
+        text-align: left;
+        margin-left: 53px;
+        margin-right: 274px;
+    }
+    .maps-foodie {
+        margin-top: 220px;
+    }
+}
+
+
+/*Dispositivo de telefono*/
+
+@media screen and (max-width: 640px) {
+    .bolder-text {
+        font-size: 35px;
+        line-height: 35px;
+    }
+    .content-header {
+        display: flex;
+        flex-direction: column-reverse;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    .img-media {
+        width: 312.93px;
+        height: 246px;
+    }
+    .about-foodie {
+        display: flex;
+        flex-direction: column;
+    }
+    .img-about {
+        height: 565px;
+    }
+    .text-about-foodie {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+    .up-text {
+        font-size: 25px;
+        line-height: 25px;
+        right: 16px;
+        bottom: 15px;
+        margin-bottom: 15px;
+    }
+    .txt-desc-arrow {
+        margin-top: 27px;
+    }
+    .maps-foodie {
+        display: flex;
+        flex-direction: column;
+    }
+    .search-locations {
+        width: 100%;
+    }
+    .show-places-content {
+        padding-left: 53px;
+        padding-right: 63px;
+    }
+    #map {
+        width: 100%;
+    }
+    .input-search .search-icon {
+        position: absolute;
+        left: 19px;
+    }
+    .i-search {
+        outline: none;
+        width: 100%;
+        padding-left: 50px;
+    }
+    .show-places-content {
+        padding-left: 16px;
+        padding-right: 16px;
+        margin-right: 32px;
+    }
+    .title-place-item {
+        font-size: 18px;
+        line-height: 22px;
+    }
+    .place-item {
+        margin-right: 2px;
+    }
+    .desc-place-item {
+        font-size: 14px;
+        line-height: 19px;
+        color: #000000;
+    }
+    .maps-title {
+        font-size: 35px;
+        line-height: 35px;
+        text-align: left;
+        margin-left: 16px;
+        margin-right: 64px;
+    }
+    .about-foodie {
+        margin-top: 52px;
+    }
+    .content-header {
+        margin-top: 111px;
+    }
+}
