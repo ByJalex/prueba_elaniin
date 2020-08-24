@@ -156,10 +156,13 @@
         </div>
         <div class="buttons">
           <div>
-            <button class="btn">Enviar comentarios</button>
+            <button @click="sendContact" class="btn">Enviar comentarios</button>
           </div>
         </div>
       </div>
+    </div>
+    <div class="footer">
+      <FooterPag></FooterPag>
     </div>
   </div>
 </template>
@@ -168,11 +171,12 @@
 // @ is an alias to /src
 import HelloWorld from "@/components/HelloWorld.vue";
 import axios from "axios";
-
+import FooterPag from "@/components/FooterPag.vue";
 export default {
   name: "Home",
   components: {
     HelloWorld,
+    FooterPag
   },
   data() {
     return {
@@ -215,6 +219,14 @@ export default {
     this.getMap(0, 13.7427126, -89.210404);
   },
   methods: {
+    //Form data
+    toFormData: function (obj) {
+      var form_data = new FormData();
+      for (var key in obj) {
+        form_data.append(key, obj[key]);
+      }
+      return form_data;
+    },
     getMap: function (getLat, getLng) {
       var coord = { lat: parseFloat(getLat), lng: parseFloat(getLng) };
       var map = new google.maps.Map(document.getElementById("map"), {
@@ -236,6 +248,22 @@ export default {
         this.getPlaces();
       }, 1500);
     },
+    sendContact: function () {
+      var formData = this.toFormData(this.sendExperience);
+      this.sendExperience.name == "" ||
+      this.sendExperience.email == "" ||
+      this.sendExperience.message == ""
+        ? alert("Campos vacios")
+        : axios
+            .post("https://api.elaniin.dev/api/contact", formData, {
+              headers: {
+                "Content-Type": "multipart/form-data",
+              },
+            })
+            .then((response) => {
+              console.log("Se enviaron los datos");
+            });
+    },
     getPlaces: function () {
       axios
         .get(
@@ -252,6 +280,7 @@ export default {
       this.activeTypeDelivery = deliveryType;
       this.place = "";
       this.placesD = [];
+      this.getPlaces();
     },
     loadInformation: function (idReceive, latitude, longitude) {
       this.idReceive = idReceive;
@@ -262,204 +291,4 @@ export default {
 </script>
 
 <style>
-.form-text textarea {
-  height: 142px;
-}
-.form-text {
-  margin-left: 25px;
-  margin-right: 25px;
-  display: flex;
-  flex-direction: column-reverse;
-  margin-bottom: 10px;
-}
-.form-text input,
-textarea {
-  outline: none;
-  color: #595959;
-  padding-top: 14px;
-  padding-left: 20px;
-  padding-bottom: 14px;
-  padding-right: 20px;
-  border: 1px solid #ffffff;
-  box-sizing: border-box;
-  border-radius: 4px;
-  background-color: #000000;
-  transition: all 0.25s ease;
-}
-.form-text input:focus + label {
-  transition: all 0.25s ease;
-  color: #ffc700;
-}
-
-.form-text textarea:focus + label {
-  transition: all 0.25s ease;
-  color: #ffc700;
-}
-.form-text textarea:focus {
-  color: #ffc700;
-  border: 1px solid #ffc700;
-}
-.form-text input:focus {
-  color: #ffc700;
-  border: 1px solid #ffc700;
-}
-.contact-form .left-form {
-  width: 40%;
-  display: flex;
-  flex-direction: column;
-}
-.contact-form .right-form {
-  width: 60%;
-  display: flex;
-  flex-direction: column;
-}
-.contact {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #000000;
-}
-
-.title-contact {
-  font-family: Druk Text Wide;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 36px;
-  line-height: 36px;
-  text-align: center;
-  color: #ffffff;
-}
-.desc-contact {
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 17px;
-  width: 698px;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 24px;
-  line-height: 33px;
-  text-align: center;
-  color: #ffffff;
-}
-.contact-form {
-  margin-top: 40px;
-  display: flex;
-  width: 922px;
-}
-.btn {
-  margin-top: 17px;
-  padding-top: 14px;
-  padding-bottom: 14px;
-  padding-left: 20px;
-  padding-right: 20px;
-  background: #ffd600;
-  border-radius: 4px;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 16px;
-  margin-right: 0px;
-  line-height: 22px;
-  margin-right: 25px;
-}
-.buttons {
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
-}
-
-@media screen and (max-width: 932px) {
-  .contact-form {
-    width: auto;
-  }
-}
-
-@media screen and (min-width: 640px) and (max-width: 768px) {
-  .contact-form {
-    flex-direction: column;
-    margin-right: 67px;
-    margin-left: 27px;
-  }
-  .form-text {
-    width: 100%;
-    margin-right: 80px;
-  }
-  .contact-form .left-form {
-    width: 100%;
-  }
-
-  .contact-form .right-form {
-    width: 100%;
-  }
-  .title-contact {
-    font-size: 36px;
-    line-height: 36px;
-  }
-  .desc-contact {
-    font-size: 24px;
-    width: 554px;
-  }
-
-  .btn {
-    margin-right: auto;
-    margin-left: auto;
-  }
-  .buttons {
-    align-items: center;
-    justify-content: center;
-    margin-top: 21px;
-  }
-  .contact-form {
-    margin-top: 42px;
-  }
-  .title-contact {
-    width: auto;
-  }
-}
-
-@media screen and (max-width: 640px) {
-  .title-contact {
-    margin-top: 73px;
-  }
-  .desc-contact {
-    font-size: 18px;
-    line-height: 25px;
-    width: 343px;
-  }
-  .contact-form {
-    flex-direction: column;
-    margin-right: 36px;
-  }
-  .contact-form .left-form {
-    padding-left: 0px;
-  }
-  .form-text {
-    width: 100%;
-    margin-right: 10px;
-  }
-  .contact-form .left-form {
-    width: 100%;
-  }
-
-  .contact-form .right-form {
-    width: 100%;
-  }
-  .btn {
-    margin-right: auto;
-    margin-left: auto;
-  }
-  .buttons {
-    align-items: center;
-    justify-content: center;
-    margin-top: 11px;
-  }
-  .contact-form {
-    margin-top: 42px;
-  }
-  .title-contact {
-    width: auto;
-    font-size: 35px;
-    line-height: 35px;
-  }
-}
 </style>

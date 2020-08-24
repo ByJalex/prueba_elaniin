@@ -3,10 +3,10 @@
     <NavBar>
       <template #left>Foodies</template>
       <template #center>
-        <router-link to="/acerca">Acerca de</router-link>
-        <router-link to="/restaurantes">Restaurantes</router-link>
-        <router-link to="/menu">Menú</router-link>
-        <router-link to="/contactanos">Contáctanos</router-link>
+        <router-link class="menu-d" to="/about">Acerca de</router-link>
+        <router-link class="menu-d" to="/restaurants">Restaurantes</router-link>
+        <router-link class="menu-d" to="/menu">Menú</router-link>
+        <router-link class="menu-d" to="/contact">Contáctanos</router-link>
       </template>
     </NavBar>
     <router-view />
@@ -37,4 +37,5 @@ export default {
   font-family: "Syne";
   src: url("./assets/Webfonts/Syne-Bold.woff");
 }
+
 </style>

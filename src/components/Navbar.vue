@@ -1,5 +1,21 @@
 <template>
   <div class="nav">
+    <transition name="slide-fade">
+      <div class="menu-drawer" v-if="showDrawerMenu">
+        <div class="title">
+          <div @click="showDrawerMenu = !showDrawerMenu">
+            <router-link to="/">
+              <slot name="left"></slot>
+            </router-link>
+          </div>
+
+          <i @click="showDrawerMenu = !showDrawerMenu" class="bx bx-x bx-sm"></i>
+        </div>
+        <div @click="showDrawerMenu = !showDrawerMenu" class="items-drawer">
+          <slot name="center"></slot>
+        </div>
+      </div>
+    </transition>
     <div class="left-content-nav">
       <router-link :class="this.$store.state.classToActiveMenu" to="/">
         <slot name="left"></slot>
@@ -9,7 +25,10 @@
       <slot name="center"></slot>
     </div>
     <div class="menu">
-      <i class="bx bx-menu bx-sm"></i>
+      <i
+        @click="showDrawerMenu = !showDrawerMenu"
+        :class="'bx bx-menu bx-sm ' + this.$store.state.classToActiveMenu"
+      ></i>
     </div>
   </div>
 </template>
@@ -17,10 +36,60 @@
 <script>
 export default {
   name: "NavBar",
+  data() {
+    return {
+      showDrawerMenu: false,
+    };
+  },
 };
 </script>
 
 <style scoped>
+.items-drawer {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  font-family: Syne;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 25px;
+  line-height: 30px;
+  color: #000000;
+  margin-bottom: 121px;
+}
+
+.slide-fade-enter-active {
+  transition: all 0.3s ease;
+}
+.slide-fade-leave-active {
+  transition: all 0.3s ease;
+}
+.slide-fade-enter,
+.slide-fade-leave-to {
+  transform: translateY(-10px);
+  opacity: 0;
+}
+.menu-drawer .title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: Druk Text Wide;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 27px;
+  line-height: 27px;
+  color: #000000;
+  margin-top: 47px;
+}
+.menu-drawer {
+  z-index: 100;
+  position: absolute;
+  background-color: white;
+  width: 100%;
+  border-radius: 0px 0px 30px 30px;
+  padding-left: 16px;
+  padding-right: 21px;
+}
 a {
   text-decoration: none;
 }
