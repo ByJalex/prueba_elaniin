@@ -211,19 +211,10 @@ export default {
   mounted() {
     this.$store.state.classToActiveMenu = "text-black";
     this.getPlaces();
-    this.getScroll();
     //Default coords
     this.getMap(0, 13.7427126, -89.210404);
   },
   methods: {
-    getScroll: function () {
-      window.document.body.onscroll = () => {
-        let animation = document.getElementById("section-2");
-        let positionObj = animation.getBoundingClientRect().top;
-        let heightScreen = window.innerHeight / 2;
-        positionObj < heightScreen ? animation.classList.add("transition") : "";
-      };
-    },
     getMap: function (getLat, getLng) {
       var coord = { lat: parseFloat(getLat), lng: parseFloat(getLng) };
       var map = new google.maps.Map(document.getElementById("map"), {
