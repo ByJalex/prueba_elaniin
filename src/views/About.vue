@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="about">
       
   </div>
 </template>
@@ -11,3 +11,9 @@ export default {
   },
 };
 </script>
+
+<style>
+  .about{
+    height: 60vh;
+  }
+</style>

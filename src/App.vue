@@ -10,14 +10,19 @@
       </template>
     </NavBar>
     <router-view />
+    <div>
+      <FooterPag/>
+    </div>
   </div>
 </template>
 
 <script>
 import NavBar from "@/components/Navbar.vue";
+import FooterPag from "@/components/FooterPag.vue";
 export default {
   components: {
     NavBar,
+    FooterPag,
   },
   methods: {
     changeColorMenu: function () {
@@ -37,5 +42,4 @@ export default {
   font-family: "Syne";
   src: url("./assets/Webfonts/Syne-Bold.woff");
 }
-
 </style>

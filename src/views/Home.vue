@@ -161,9 +161,6 @@
         </div>
       </div>
     </div>
-    <div class="footer">
-      <FooterPag></FooterPag>
-    </div>
   </div>
 </template>
 
@@ -171,12 +168,10 @@
 // @ is an alias to /src
 import HelloWorld from "@/components/HelloWorld.vue";
 import axios from "axios";
-import FooterPag from "@/components/FooterPag.vue";
 export default {
   name: "Home",
   components: {
     HelloWorld,
-    FooterPag
   },
   data() {
     return {

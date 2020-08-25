@@ -59,15 +59,15 @@ export default {
 }
 
 .slide-fade-enter-active {
-  transition: all 0.3s ease;
+  transition: all 0.5s ease;
 }
 .slide-fade-leave-active {
-  transition: all 0.3s ease;
+  transition: all 0.5s ease;
 }
 .slide-fade-enter,
 .slide-fade-leave-to {
-  transform: translateY(-10px);
-  opacity: 0;
+  transform: translateY(-500px);
+  /*opacity: 0;*/
 }
 .menu-drawer .title {
   display: flex;

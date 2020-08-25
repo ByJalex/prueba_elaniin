@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="restaurants">
       
   </div>
 </template>
@@ -11,3 +11,9 @@ export default {
   },
 };
 </script>
+
+<style>
+    .restaurants{
+    height: 60vh;
+  }
+</style>
